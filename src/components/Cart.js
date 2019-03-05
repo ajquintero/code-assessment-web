@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
 import './styles/Cart.css';
-import cartImage from '../../assets/cart.png';
+import cartImage from '../../src/cart.png';
 
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
