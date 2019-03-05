@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
+import './styles/Cart.css';
+import cartImage from '../../assets/cart.png';
+
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0;
@@ -15,15 +18,25 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       />
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <div className = "cart-container">
+      <div>
+        <img id = "cart-img" src = {cartImage}/>
+      </div>
+      <div>
+        <p id = "cart-comment"> Please add a product to your cart. </p>
+      </div>
+    </div>
   );
 
   return (
     <div>
-      <h3>Your Cart</h3>
+      <h3 id = "cart-header">Your Cart</h3>
       <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
+      <div className = "quantity">
+        <p id = "total-text">Total</p>
+        <p>Total: &#36;{total}</p>
+      </div>
+      <button id = "checkout" onClick={onCheckoutClicked}
         disabled={hasProducts ? '' : 'disabled'}>
         Checkout
       </button>
