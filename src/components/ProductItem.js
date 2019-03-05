@@ -1,6 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Product from './Product'
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import PropTypes from 'prop-types';
+import Product from './Product';
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <div style={{ marginBottom: 20 }}>
@@ -14,7 +15,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
       {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
     </button>
   </div>
-)
+);
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
@@ -23,6 +24,6 @@ ProductItem.propTypes = {
     inventory: PropTypes.number.isRequired
   }).isRequired,
   onAddToCartClicked: PropTypes.func.isRequired
-}
+};
 
-export default ProductItem
+export default ProductItem;
