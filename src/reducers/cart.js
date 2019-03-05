@@ -24,6 +24,7 @@ const addedIds = (state = initialState.addedIds, action) => {
 const quantityById = (state = initialState.quantityById, action) => {
   switch(action.type) {
     case ADD_TO_CART:
+      // eslint-disable-next-line no-case-declarations
       const { productId } = action;
       return { ...state,
         [productId]: (state[productId] || 0) + 1
